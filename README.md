@@ -1,4 +1,4 @@
-# SopScreen
+# Litmus
 
 A library for screening product images against a written classification policy — which
 begins by checking whether the policy can be applied at all. It lints the standard operating
@@ -112,7 +112,7 @@ four additions) and crosschecked against scikit-learn to 1e-12.
 ## Project Structure
 
 ```
-sop-screen/
+litmus/
 ├── setup.sh                           # venv + suite + re-derives all 7 claims
 ├── pyproject.toml
 ├── ARCHITECTURE.md

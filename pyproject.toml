@@ -3,7 +3,7 @@ requires = ["setuptools>=68"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "sop-screen"
+name = "litmus"
 version = "0.1.0"
 description = "Lint a classification SOP for undecidable, unevaluable and unlearnable rules; adjudicate image evidence against it with an explicit abstain state."
 readme = "README.md"
