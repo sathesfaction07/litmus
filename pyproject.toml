@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sop-screen"
+version = "0.1.0"
+description = "Lint a classification SOP for undecidable, unevaluable and unlearnable rules; adjudicate image evidence against it with an explicit abstain state."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.optional-dependencies]
+# Real inference is OPTIONAL. The whole suite runs offline against a stub client, so an
+# outsider needs no AWS account to reproduce every claim in the README.
+bedrock = ["boto3>=1.34", "pillow>=10"]
+# scikit-learn is a HARD dev dependency: the metric layer is hand-implemented, so its
+# equivalence must be provable on every clone rather than skippable.
+# pillow is here too, not only in [bedrock]: the RGBA regression test must RUN on a
+# clean clone, and a skipped regression test is the defect coming back unnoticed.
+dev = ["pytest>=7", "pytest-cov>=4", "ruff>=0.4", "scikit-learn>=1.3", "pillow>=10"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 100
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]
