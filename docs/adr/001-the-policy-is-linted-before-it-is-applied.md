@@ -5,7 +5,7 @@
 
 ## Context
 
-The brief for a screen like this is "classify product images against the SOP", and the obvious
+The project brief for a screen like this is "classify product images against the SOP", and the obvious
 build is: inject the SOP into a vision prompt, collect observations, decide. That treats the
 policy as a trusted specification and the model as the only source of error.
 
