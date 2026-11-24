@@ -29,3 +29,8 @@ src = ["src", "tests"]
 
 [tool.ruff.lint]
 select = ["E", "F", "I", "UP", "B", "SIM"]
+
+[tool.pytest.ini_options]
+# tests import shared fixtures as `tests.conftest`, so the project root must be importable.
+# `python -m pytest` adds the current directory and hid this locally; plain `pytest` (CI) does not.
+pythonpath = ["."]
